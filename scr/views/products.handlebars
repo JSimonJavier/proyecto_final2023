@@ -1,0 +1,83 @@
+<div id="product" class="container mt-4">
+     <div class="text-end">
+        <a href="/api/users/profile" class="btn btn-secondary me-2">Profile</a>
+        <a href="/api/users/logout" class="btn btn-secondary me-2">Log Out</a>
+    </div>
+    <h1 class="border-bottom border-white p-2 text-white">
+        {{user.firstName}} {{user.lastName}} [{{user.role}}]
+        <button type="button" class="btn btn-primary" onclick="myCart('{{user.cartId}}')">Go to Cart</button>
+    </h1>
+
+    {{#if isAdm}}
+    <div class="row">
+        {{#each products}}
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <img src="{{this.thumbnail}}" class="card-img-top" alt="{{this.title}}" width="200px" height="200px">
+                <div class="card-body">
+                    <h2 class="card-title">{{this.title}} <button type="button" class="btn btn-danger float-end" onclick="deleteButton('{{this._id}}')">X</button></h2>
+                    <p class="card-text">Description: {{this.description}}</p>
+                    <p class="card-text">Price: {{this.price}}</p>
+                    <p class="card-text">Stock: {{this.stock}}</p>
+                    <p class="card-text">Category: {{this.category}}</p>
+                    <button type="button" class="btn btn-success" onclick="addToCart('{{this._id}}')">Add To Cart</button>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+
+    <div class="text-center">
+        <a href="/api/users/admpanel" class="btn btn-secondary me-2">Admin Panel</a>
+        <a href="/api/users/profile" class="btn btn-secondary me-2">Profile</a>
+        <a href="/api/users/logout" class="btn btn-secondary me-2">Log Out</a>
+    </div>
+
+    {{#if pagination.prevPage}}
+    <a href="?page={{pagination.prevPage}}" class="btn btn-info mt-2">⏪{{pagination.prevPage}}</a>
+    {{/if}}
+
+    <span class="btn btn-info mt-2">Page: {{pagination.page}}</span>
+
+    {{#if pagination.nextPage}}
+    <a href="?page={{pagination.nextPage}}" class="btn btn-info mt-2">⏩{{pagination.nextPage}}</a>
+    {{/if}}
+    </div>
+
+    {{else}}
+    <div class="row">
+        {{#each products}}
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <img src="{{this.thumbnail}}" class="card-img-top" alt="{{this.title}}" width="200px" height="200px">
+                <div class="card-body">
+                    <h2 class="card-title">{{this.title}}</h2>
+                    <p class="card-text">Description: {{this.description}}</p>
+                    <p class="card-text">Price: {{this.price}}</p>
+                    <p class="card-text">Stock: {{this.stock}}</p>
+                    <p class="card-text">Category: {{this.category}}</p>
+                    <button type="button" class="btn btn-success" onclick="addToCart('{{this._id}}')">Add To Cart</button>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+
+   
+
+    {{#if pagination.prevPage}}
+    <a href="?page={{pagination.prevPage}}" class="btn btn-info mt-2">⏪{{pagination.prevPage}}</a>
+    {{/if}}
+
+    <span class="btn btn-info mt-2">Page: {{pagination.page}}</span>
+
+    {{#if pagination.nextPage}}
+    <a href="?page={{pagination.nextPage}}" class="btn btn-info mt-2">⏩{{pagination.nextPage}}</a>
+    {{/if}}
+</div>
+{{/if}}
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+<script src="/js/index.js"></script>

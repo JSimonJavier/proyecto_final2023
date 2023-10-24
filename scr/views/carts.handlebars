@@ -1,0 +1,32 @@
+<div class="container mt-4">
+    <div class="list-group ">
+        <h1 class="list-group-item active">Cart ID: {{_id}}</h1>
+
+        {{#each products}}
+        <ul class="border-bottom border-white border-start border-white d-flex">
+
+        <li> 🛒 </li>
+        <li class="list-group-item">
+            Name: {{this.productId.title}} 
+        </li>
+        <li class="list-group-item">
+            Quantity: {{this.quantity}}
+        </li>
+        <li class="list-group-item">
+            Price: ${{this.productId.price}}
+        </li>
+         </ul>
+        {{/each}}
+    </div>
+
+    <button type="button" class="btn btn-primary mt-2" onclick="purchase('{{_id}}')">Purchase!</button>
+
+    <div class="mt-2">
+        <a href="/api/products" class="btn btn-secondary me-2">Products</a>
+        <a href="/api/users/profile" class="btn btn-secondary me-2">Profile</a>
+        <a href="/api/users/logout" class="btn btn-secondary">Log Out</a>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+<script src="/js/index.js"></script>

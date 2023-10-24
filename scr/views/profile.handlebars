@@ -1,0 +1,16 @@
+<div style="display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #f8f9fa;">
+    <div>
+        <h1>Welcome: {{this.firstName}} {{this.lastName}}</h1>
+        <h2>Email: {{this.email}}</h2>
+        <h2>Role: {{this.role}}</h2>
+
+        <div class="mt-4">
+            <a href="/api/products" class="btn btn-primary me-2">Products</a>
+            <a href="/api/users/logout" class="btn btn-secondary">Log Out</a>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+<script src="/js/index.js"></script>

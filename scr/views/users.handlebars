@@ -1,0 +1,22 @@
+<div class="container mt-4">
+    <h1 class="text-center">USERS</h1>
+
+    {{#each users}}
+    <ul class="list-group mb-4">
+        <li class="list-group-item">
+            Name: {{this.firstName}} {{this.lastName}}
+        </li>
+        <li class="list-group-item">
+            User: {{this.email}}
+        </li>
+        <li class="list-group-item">
+            Role: {{this.role}}
+        </li>
+    </ul>
+    {{/each}}
+
+    <div class="text-center mt-2">
+        <a href="/api/products" class="btn btn-primary me-2">Products</a>
+        <a href="/api/users/logout" class="btn btn-secondary">Log Out</a>
+    </div>
+</div>

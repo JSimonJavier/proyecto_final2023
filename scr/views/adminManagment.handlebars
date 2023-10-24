@@ -1,0 +1,44 @@
+{{!-- <h1>ADMIN VIEW</h1>
+{{#each users}}
+<ul>
+    <li>user: {{this.email}} <br></li>
+    <li>role: {{this.role}} <br></li>
+<button type="button" onclick="UpdatePremium('{{this._id}}')">Become Premium</button>
+<button type="button" onclick="deleteUser('{{this._id}}')">Delete User</button>
+<br>
+
+</ul>
+
+{{/each}}
+
+    <a href="/api/products">Products</a>
+    <a href="/api/users/profile">Profile</a>
+    <a href="/api/users/logout">Log Out</a> --}}
+
+<div class="container mt-4">
+    <h1 class="text-center text-white">ADMIN VIEW</h1>
+
+    {{#each users}}
+    <ul class="list-group border-bottom border-info border-start border-info m-3">
+        <li class="list-group-item">
+            User: {{this.email}}
+        </li>
+        <li class="list-group-item">
+            Role: {{this.role}}
+        </li>
+        <li class="list-group-item">
+            <button type="button" class="btn btn-success" onclick="UpdatePremium('{{this._id}}')">Become Premium</button>
+            <button type="button" class="btn btn-danger" onclick="deleteUser('{{this._id}}')">Delete User</button>
+        </li>
+    </ul>
+    {{/each}}
+
+    <div class="text-center mt-2">
+        <a href="/api/products" class="btn btn-secondary me-2">Products</a>
+        <a href="/api/users/profile" class="btn btn-secondary me-2">Profile</a>
+        <a href="/api/users/logout" class="btn btn-secondary">Log Out</a>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+<script src="/js/index.js"></script>

@@ -1,0 +1,25 @@
+<div style="display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #f8f9fa;">
+    <div style="background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0px 0px 5px 0px #888; width: 400px;">
+        <h1 class="text-center">REGISTER</h1>
+        <form action="/api/users/register" method="POST">
+            <div class="mb-3">
+                <label for="firstName" class="form-label">First Name</label>
+                <input type="text" id="firstName" name="firstName" class="form-control" placeholder="Enter your first name">
+            </div>
+            <div class="mb-3">
+                <label for="lastName" class="form-label">Last Name</label>
+                <input type="text" id="lastName" name="lastName" class="form-control" placeholder="Enter your last name">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="text" id="email" name="email" class="form-control" placeholder="Enter your email">
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" id="password" name="password" class="form-control" placeholder="Enter your password">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Register</button>
+        </form>
+        <a href="/api/users/login" class="btn btn-secondary btn-block mt-2">I have an account</a>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<div style="display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #f8f9fa;">
+    <div style="background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0px 0px 5px 0px #888;">
+        <h1 class="text-center">LOGIN</h1>
+        <form action="/api/users/login" method="POST">
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="text" id="email" name="email" class="form-control" placeholder="Enter your email">
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" id="password" name="password" class="form-control" placeholder="Enter your password">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Login</button>
+        </form>
+        <a href="/api/users/register" class="btn btn-secondary btn-block mt-2">Create account</a>
+        <a href="/api/session/github" class="btn btn-secondary btn-block mt-2">Login with GitHub</a>
+    </div>
+</div>
